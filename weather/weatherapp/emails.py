@@ -275,7 +275,7 @@ def node_down_tuple(recipient, fingerprint, name, grace_pd, unsubs_auth,
     subj = _SUBJECT_HEADER + _NODE_DOWN_SUBJ
     sender = _SENDER
     num_hours = str(grace_pd) + " hour"
-    if grace_pd > 1:
+    if grace_pd != 1:
         num_hours += "s"
     msg = _NODE_DOWN_MAIL % (router, num_hours)
     msg = _add_generic_footer(msg, unsubs_auth, pref_auth)
