@@ -16,9 +16,9 @@
 4) A copy of (or link to) the TorCtl package must be located within the weather
    directory.
 
-   $ svn co https://svn.torproject.org/svn/torctl/branches/stable/python/TorCtl
+   $ git clone https://git.torproject.org/pytorctl.git 
    $ cd current/weather
-   $ ln -s ../../TorCtl .
+   $ ln -s ../../pytorctl TorCtl 
 
 5) Create a file named auth_token inside the weather.config directory and 
    insert your Tor hashed control password in plain text. The file should 
