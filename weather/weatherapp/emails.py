@@ -78,7 +78,8 @@ _NODE_DOWN_SUBJ = 'Node Down!'
 _NODE_DOWN_MAIL = "This is a Tor Weather Report.\n\n" +\
     "It appears that the node %s you've been observing " +\
     "has been uncontactable through the Tor network for at least %s. "+\
-    "You may wish to look at it to see why."
+    "You may wish to look at it to see why.\n\nYou can find more "+\
+    "information at:\n\n%s"
 
 _VERSION_SUBJ = 'Node Out of Date!'
 _VERSION_MAIL = "This is a Tor Weather Report.\n\n"+\
@@ -135,10 +136,9 @@ _LEGAL_INFO = "Additionally, since you are running as an exit node, you " +\
     "(https://blog.torproject.org/blog/tips-running-exit-node-minimal-"+\
     "harassment).\n\n"
 
-_GENERIC_FOOTER = "\n\nYou can unsubscribe from these reports at any time "+\
-    "by visiting the following url:\n\n%s\n\nor change your Tor Weather "+\
-    "notification preferences here: \n\n%s"
-
+_GENERIC_FOOTER = "\n\nYou can change your Tor Weather notification "+\
+    "preferences here:\n\n%s\n\nor unsubscribe from these reports at any "+\
+    "time by visiting the following url:\n\n%s" 
 
 def _get_router_name(fingerprint, name):
     """Returns a string representation of the name and fingerprint of
@@ -277,7 +277,8 @@ def node_down_tuple(recipient, fingerprint, name, grace_pd, unsubs_auth,
     num_hours = str(grace_pd) + " hour"
     if grace_pd != 1:
         num_hours += "s"
-    msg = _NODE_DOWN_MAIL % (router, num_hours)
+    atlas_url = 'https://atlas.torproject.org/#details/' + fingerprint
+    msg = _NODE_DOWN_MAIL % (router, num_hours, atlas_url
     msg = _add_generic_footer(msg, unsubs_auth, pref_auth)
     return (subj, msg, sender, [recipient])
 
