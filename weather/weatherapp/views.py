@@ -46,14 +46,14 @@ def subscribe(request):
             try:
                 subscriber = form.create_subscriber()
             except Exception, e:
-                return HttpResponseRedirect(e)
+                return HttpResponseRedirect(str(e))
             else:
                 # Creates subscriptions based on form data
                 form.create_subscriptions(subscriber)
 
                 # Spawn a daemon to send the confirmation email.
                 confirm_auth = subscriber.confirm_auth
-		unsubs_auth = subscriber.unsubs_auth
+                unsubs_auth = subscriber.unsubs_auth
                 addr = subscriber.email
                 fingerprint = subscriber.router.fingerprint
                 name = subscriber.router.name
