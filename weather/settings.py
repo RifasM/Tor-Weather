@@ -24,7 +24,12 @@ DATABASES = {
         'PASSWORD': '',                  # Not used with sqlite3.
         'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
         'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
+        'OPTIONS': { 'timeout': 20, },
     }
+}
+
+DATABASE_OPTIONS: {
+        'timeout': 20,
 }
 
 # Local time zone for this installation. Choices can be found here:
