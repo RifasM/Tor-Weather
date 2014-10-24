@@ -201,5 +201,5 @@ Updating the database and sending email notifications is handled by the updaters
 Each Subscription in the database is updated, and emails are sent to the Subscriber's email if the conditions indicate a notification should be sent. 
 
 .. _Django (v1.2): http://docs.djangoproject.com/en/1.2/intro/overview/
-.. _Tor T-Shirt page: http://www.torproject.org/tshirt.html.en
+.. _Tor T-Shirt page: https://www.torproject.org/tshirt.html.en
 .. _directory specifications: https://svn.torproject.org/svn/tor/trunk/doc/spec/dir-spec.txt
