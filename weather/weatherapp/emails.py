@@ -157,9 +157,9 @@ def _get_router_name(fingerprint, name):
 
     spaced_fingerprint = insert_fingerprint_spaces(fingerprint) 
     if name == 'Unnamed':
-        return "(id: %s)" % spaced_fingerprint
+        return "(fingerprint: %s)" % spaced_fingerprint
     else:
-        return "%s (id: %s)" % (name, spaced_fingerprint)
+        return "%s (fingerprint: %s)" % (name, spaced_fingerprint)
 
 def _add_generic_footer(msg, unsubs_auth, pref_auth):
     """
