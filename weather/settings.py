@@ -28,7 +28,7 @@ DATABASES = {
     }
 }
 
-DATABASE_OPTIONS: {
+DATABASE_OPTIONS = {
         'timeout': 20,
 }
 

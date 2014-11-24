@@ -56,7 +56,7 @@ from weatherapp.models import insert_fingerprint_spaces
 
 from django.core.mail import send_mail
 
-_SENDER = 'tor-ops@torproject.org'
+_SENDER = 'weather@torproject.org'
 _SUBJECT_HEADER = '[Tor Weather] '
 
 _CONFIRMATION_SUBJ = 'Confirmation Needed'
