@@ -278,7 +278,7 @@ def node_down_tuple(recipient, fingerprint, name, grace_pd, unsubs_auth,
     if grace_pd != 1:
         num_hours += "s"
     atlas_url = 'https://atlas.torproject.org/#details/' + fingerprint
-    msg = _NODE_DOWN_MAIL % (router, num_hours, atlas_url
+    msg = _NODE_DOWN_MAIL % (router, num_hours, atlas_url)
     msg = _add_generic_footer(msg, unsubs_auth, pref_auth)
     return (subj, msg, sender, [recipient])
 
