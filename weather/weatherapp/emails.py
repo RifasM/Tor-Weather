@@ -179,7 +179,7 @@ def _add_generic_footer(msg, unsubs_auth, pref_auth):
 
     unsubURL = url_helper.get_unsubscribe_url(unsubs_auth)
     prefURL = url_helper.get_preferences_url(pref_auth)
-    footer = _GENERIC_FOOTER % (unsubURL, prefURL)
+    footer = _GENERIC_FOOTER % (prefURL, unsubURL)
     
     return msg + footer
 
